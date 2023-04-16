@@ -49,3 +49,6 @@ For the mechanical ventilation prediction, our approach has been founded on this
 [Clinical Intervention Prediction and Understanding with Deep Neural Networks
 ](https://www.semanticscholar.org/paper/Clinical-Intervention-Prediction-and-Understanding-Suresh-Hunt/5dba3ab85f106874178e1e2d52fc4247afed912e)
 
+### Running the demo on a docker container (```dockerization/main.py```)
+Run the [deployment.sh](https://github.com/zoevas/Intervention_prediction/blob/main/dockerization/deployment.sh)
+Hit localhost:8080. You can give your input and get the prediction on the UI.
