@@ -6,6 +6,8 @@ This repo contains code related with intervention prediction and specifically fo
 - Prediction of Intervention prediction
 - UI for giving the new input to the prediction model
 
+The prediction can be easily tailored to other predictions by changing the target variable to be other type of intervention such as red blood transfusion, vassopressor usage, non-invasive ventilation. The main changes will be to the cohort selection query for retrieving the corresponding target variable.
+
 ## Step-by-step instructions
 ### Setting up the MIMIC III dataset on a postgres database
 At least 47GB should be available on the disk.
