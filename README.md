@@ -18,7 +18,7 @@ Go to the concepts_postgres folder, run the postgres-functions.sql and postgres-
 zvasilei@xxx:~/Downloads/mimicClinicalVaso/mimicClinical/mimic-code/mimic-iii/concepts$ DBCONNEXTRA="user=<username> password=<pwd>" bash postgres_make_concepts.sh
 ```
 
-## Background
+## Description
 ### Cohort Selection (```preprocess/1_Intubation_cohort_selection.py```)
 
 
