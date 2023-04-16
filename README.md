@@ -20,7 +20,10 @@ zvasilei@xxx:~/Downloads/mimicClinicalVaso/mimicClinical/mimic-code/mimic-iii/co
 
 ## Description
 ### Cohort Selection (```preprocess/1_Intubation_cohort_selection.py```)
-
+Patients who are younger than 15 years old are excluded. Only first ICU admission that took at least one day and less than 10 days are retrieved.
+The final cohort is 34472.
+The patients, icu stays and admission tables are joined in order to compute patient's age, and other information.
+From the charted events and lab events, 17 different variables are retrieved. 
 
 ### Preprocessing of the dataset (```preprocess/2_Intubation_preprocess.py```)
 For the preprocessing, we have been based on the preprocessing pipeline of this paper:
@@ -29,6 +32,16 @@ For the preprocessing, we have been based on the preprocessing pipeline of this 
 Representation Pipeline for MIMIC-III](https://arxiv.org/pdf/1907.08322.pdf)
 
 Code: https://github.com/MLforHealth/MIMIC_Extract
+
+In the cohort selection part, we have extracted patients, events, and outcomes (if the patient has been mechanically ventilated or not).
+Here, the data are pre-processed:
+- Map event variables to the same metric
+- Detect and remove or replace outliers in the event data
+- Reorganize the events data so that we have a column for every variable and a row for every hour and every ICU stay
+- Impute time series data: if the variable was measured for the subject, but only after the current hour, we replace the NaN value with the average for this specific subject/ICU stay combination. If the variable was never measured, we replace with the global average.
+- Standarize the continuous event variables using a min max scaler
+- One-hot encode the categorical event variables
+For the outliers, and the unit conversion, we have used formal checks based on the [aforementioned paper](https://github.com/MLforHealth/MIMIC_Extract).
 
 ### Prediction (```Prediction/Mechanical_Ventilation/Mechanical_Ventilation_Prediction.py```)
 
