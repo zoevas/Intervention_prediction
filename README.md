@@ -51,6 +51,13 @@ For the mechanical ventilation prediction, our approach has been founded on this
 [Clinical Intervention Prediction and Understanding with Deep Neural Networks
 ](https://www.semanticscholar.org/paper/Clinical-Intervention-Prediction-and-Understanding-Suresh-Hunt/5dba3ab85f106874178e1e2d52fc4247afed912e)
 
+### Evaluation
+#### Confusion matrix for mechanical ventilation
+<img width="1612" height="778" alt="mechVent_allPatients" src="https://github.com/user-attachments/assets/c4f1d18e-cd74-42c6-89ed-fed7c9db671d" />
+
+#### Confusion matrix for vasopressor usage
+<img width="1564" height="708" alt="Vaso_allpatients" src="https://github.com/user-attachments/assets/d99d1be0-fbfc-46ba-95af-50ee8a0fc61d" />
+
 ### Running the demo on a docker container (```dockerization/main.py```)
 Run the [deployment.sh](https://github.com/zoevas/Intervention_prediction/blob/main/dockerization/deployment.sh)
 Hit localhost:8080. You can give your input and get the prediction on the UI.
